@@ -8,11 +8,11 @@ const CartDropdown = () => {
 
     const {cartItems} = useContext(CartContext);
 
-
+  console.log('cart items:', cartItems);
   return (
     <div className="cart-dropdown-container">
       <div className="cart-items">
-        {cartItems.map(cartItem => <CartItem  key={cartItem.id} cartItem={cartItem} />)}
+        {cartItems.map((item) => <CartItem  key={item.id} cartItem={item} />)}
       </div>
       <Button>GO TO CHECKOUT</Button>
     </div>
