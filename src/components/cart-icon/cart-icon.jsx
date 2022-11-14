@@ -9,8 +9,10 @@ const CartIcon = () => {
 
     const{isCartOpen, setIsCartOpen,cartCount} = useContext(CartContext);
 
+
     const toggleIsCartOpen = () => {
-        setIsCartOpen((previousState)=> setIsCartOpen(!previousState));
+        // setIsCartOpen((previousState)=> setIsCartOpen(!previousState));
+        setIsCartOpen((previousState) => !previousState);
     }
 
     return (
