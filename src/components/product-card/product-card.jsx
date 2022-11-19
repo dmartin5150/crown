@@ -7,6 +7,7 @@ import Button from "../button/button";
 const ProductCard = ({ product }) => {
   const { name, imageUrl, price } = product;
 
+
   const {addItemToCart} = useContext(CartContext);
 
   const addProductToCart = ()=> {
@@ -14,6 +15,7 @@ const ProductCard = ({ product }) => {
   }
 
   return (
+
     <div className="product-card-container">
       <img src={imageUrl} alt={`${name}`} />
       <div className="footer">
