@@ -1,4 +1,4 @@
-import "./categories.styles.scss";
+// import "./categories.styles.scss";
 import { Routes, Route } from "react-router-dom";
 import Navigation from "./routes/navigation/navigation";
 import Home from "./routes/home/home";
