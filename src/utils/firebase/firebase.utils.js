@@ -25,7 +25,8 @@ import {
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDIe6vWviMoqeK66sTTTnki1qquZAGiPW4",
-  authDomain: "crown-clothing-db-9efa3.firebaseapp.com",
+//   authDomain: "crown-clothing-db-9efa3.firebaseapp.com",
+  authDomain: "merry-sherbet-23a1f9.netlify.app/",
   projectId: "crown-clothing-db-9efa3",
   storageBucket: "crown-clothing-db-9efa3.appspot.com",
   messagingSenderId: "670456746903",
