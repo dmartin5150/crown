@@ -6,11 +6,12 @@ import { CartContext } from '../../contexts/cart.context';
 
 const CartIcon = () => {
 
-    const {setIsCartOpen,cartCount} = useContext(CartContext);
+    const {setIsCartOpen,cartCount, isCartOpen} = useContext(CartContext);
 
 
     const toggleIsCartOpen = () => {
-        setIsCartOpen((previousState) => !previousState);
+        console.log('toggleIsCartOpen');
+        setIsCartOpen(!isCartOpen);
     }
 
     return (
