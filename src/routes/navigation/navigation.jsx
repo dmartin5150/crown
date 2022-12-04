@@ -8,9 +8,9 @@ import CartIcon from "../../components/cart-icon/cart-icon";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown";
 // import { UserContext } from "../../contexts/user.context";
 import { selectIsCartOpen } from "../../store/cart/cart.selector";
-import { signOutUser } from "../../utils/firebase/firebase.utils";
 import { setCurrentUser } from "../../store/user/user.action";
 import { selectCurrentUser } from "../../store/user/user.selector";
+import { signOutStart } from "../../store/user/user.action";
 
 const Navigation = () => {
   const dispatch = useDispatch();
@@ -21,8 +21,9 @@ const Navigation = () => {
   const currentUser = useSelector(selectCurrentUser);
 
   const signOutHandler = async () => {
-    const res = await signOutUser();
-    dispatch(setCurrentUser(null));
+    // const res = await signOutUser();
+
+    dispatch(signOutStart());
   };
 
 

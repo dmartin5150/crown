@@ -12,7 +12,7 @@ import Home from "./routes/home/home";
 import Authentication from "./routes/authentication/authentication";
 import Shop from "./routes/shop/shop";
 import Checkout from "./routes/checkout/checkout";
-import { setCurrentUser } from "./store/user/user.action";
+import { checkUserSession } from "./store/user/user.action";
 
 
 
@@ -25,7 +25,8 @@ const App = () => {
 
   useEffect(() => {
 
-    getCurrentUser().then((user) => console.log(user));
+    dispatch(checkUserSession());
+    // getCurrentUser().then((user) => console.log(user));
 
 
     // const unsubscribe = onAuthStateChangedListener((user) => {
