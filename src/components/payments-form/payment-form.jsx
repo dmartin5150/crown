@@ -25,7 +25,7 @@ const PaymentForm = () => {
 
     try {
       const response = await fetch(
-        "/.netlify/functions/create-payment-intent",
+        "./.netlify/functions/create-payment-intent",
         {
           method: "POST",
           headers: {
