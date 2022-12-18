@@ -3,7 +3,7 @@ import { CategoriesState } from "./category.reducer";
 import { CategoryMap } from "./category.types";
 
 const selectCategoryReducer = (state): CategoriesState => {
-  console.log("categories resucer", state.categories.categories);
+  console.log("categories reducer", state.categories.categories);
   return state.categories;
 };
 
