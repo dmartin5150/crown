@@ -71,7 +71,7 @@ const clearCartItem = (
   return cartItems.filter((cartItem) => cartItem.id !== productToClear.id);
 };
 
-export const addItemToCart = (cartItems: CartItem[], productToAdd: CartItem): SetCartItems => {
+export const addItemToCart = (cartItems: CartItem[], productToAdd: CategoryItem): SetCartItems => {
     const newCartItems = addCartItem(cartItems, productToAdd);
     return setCartItems(newCartItems);
   }

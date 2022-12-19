@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState,FormEvent,ChangeEvent } from "react";
 import FormInput from "../form-input/form-input";
 import Button, {BUTTON_TYPES_CLASSES} from "../button/button";
 import { useDispatch } from "react-redux";
 
-import {SignInContainer,ButtonsContainer} from  "./sign-in-form.styles.jsx";
+
+import { AuthError, AuthErrorCodes } from "firebase/auth";
+
+import {SignInContainer,ButtonsContainer} from  "./sign-in-form.styles.js";
 import { googleSignInStart, emailSignInStart } from "../../store/user/user.action";
 
 const defaultFormFields = {
@@ -23,7 +26,7 @@ const SignInForm = () => {
     dispatch(googleSignInStart());
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event:ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
   };
@@ -32,16 +35,16 @@ const SignInForm = () => {
     setFormFields(defaultFormFields);
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event:FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     try {
       dispatch(emailSignInStart(email,password));
       resetFormFields();
     } catch (error) {
-      if (error.code === "auth/wrong-password") {
+      if ((error as AuthError).code === AuthErrorCodes.INVALID_PASSWORD) {
         alert("Password Incorrect for email");
-      } else if (error.code === "auth/user-not-found") {
+      } else if ((error as AuthError).code === AuthErrorCodes.INVALID_EMAIL) {
         alert("User not found");
       } else {
         console.log("User creation encountered an error", error);
