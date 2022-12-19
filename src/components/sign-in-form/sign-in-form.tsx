@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 
 import { AuthError, AuthErrorCodes } from "firebase/auth";
 
-import {SignInContainer,ButtonsContainer} from  "./sign-in-form.styles.js";
+import {SignInContainer,ButtonsContainer} from  "./sign-in-form.styles";
 import { googleSignInStart, emailSignInStart } from "../../store/user/user.action";
 
 const defaultFormFields = {
